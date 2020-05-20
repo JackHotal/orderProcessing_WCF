@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://jwsorderprocessing/" targetNamespace="http://jwsorderprocessing/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Purchase" type="tns:Purchase" />
+  <xs:element name="PurchaseResponse" type="tns:PurchaseResponse" />
+  <xs:element name="getCustomer" type="tns:getCustomer" />
+  <xs:element name="getCustomerOrders" type="tns:getCustomerOrders" />
+  <xs:element name="getCustomerOrdersResponse" type="tns:getCustomerOrdersResponse" />
+  <xs:element name="getCustomerResponse" type="tns:getCustomerResponse" />
+  <xs:element name="getOrderDetails" type="tns:getOrderDetails" />
+  <xs:element name="getOrderDetailsResponse" type="tns:getOrderDetailsResponse" />
+  <xs:element name="getProductDetail" type="tns:getProductDetail" />
+  <xs:element name="getProductDetailResponse" type="tns:getProductDetailResponse" />
+  <xs:element name="getProductIds" type="tns:getProductIds" />
+  <xs:element name="getProductIdsResponse" type="tns:getProductIdsResponse" />
+  <xs:complexType name="getProductDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProductDetailResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerOrders">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomerOrdersResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrderDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOrderDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProductIds">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getProductIdsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Purchase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PurchaseResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://jwsorderprocessing/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" name="OrderProcessingService" targetNamespace="http://jwsorderprocessing/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/jwsorderprocessing/OrderProcessingService?xsd=1" namespace="http://jwsorderprocessing/" />
+    </xsd:schema>
+  </types>
+  <message name="getOrderDetails">
+    <part name="parameters" element="tns:getOrderDetails" />
+  </message>
+  <message name="getOrderDetailsResponse">
+    <part name="parameters" element="tns:getOrderDetailsResponse" />
+  </message>
+  <message name="Purchase">
+    <part name="parameters" element="tns:Purchase" />
+  </message>
+  <message name="PurchaseResponse">
+    <part name="parameters" element="tns:PurchaseResponse" />
+  </message>
+  <message name="getCustomer">
+    <part name="parameters" element="tns:getCustomer" />
+  </message>
+  <message name="getCustomerResponse">
+    <part name="parameters" element="tns:getCustomerResponse" />
+  </message>
+  <message name="getProductDetail">
+    <part name="parameters" element="tns:getProductDetail" />
+  </message>
+  <message name="getProductDetailResponse">
+    <part name="parameters" element="tns:getProductDetailResponse" />
+  </message>
+  <message name="getProductIds">
+    <part name="parameters" element="tns:getProductIds" />
+  </message>
+  <message name="getProductIdsResponse">
+    <part name="parameters" element="tns:getProductIdsResponse" />
+  </message>
+  <message name="getCustomerOrders">
+    <part name="parameters" element="tns:getCustomerOrders" />
+  </message>
+  <message name="getCustomerOrdersResponse">
+    <part name="parameters" element="tns:getCustomerOrdersResponse" />
+  </message>
+  <portType name="OrderProcessingService">
+    <operation name="getOrderDetails">
+      <input wsam:Action="http://jwsorderprocessing/OrderProcessingService/getOrderDetailsRequest" message="tns:getOrderDetails" />
+      <output wsam:Action="http://jwsorderprocessing/OrderProcessingService/getOrderDetailsResponse" message="tns:getOrderDetailsResponse" />
+    </operation>
+    <operation name="Purchase">
+      <input wsam:Action="http://jwsorderprocessing/OrderProcessingService/PurchaseRequest" message="tns:Purchase" />
+      <output wsam:Action="http://jwsorderprocessing/OrderProcessingService/PurchaseResponse" message="tns:PurchaseResponse" />
+    </operation>
+    <operation name="getCustomer">
+      <input wsam:Action="http://jwsorderprocessing/OrderProcessingService/getCustomerRequest" message="tns:getCustomer" />
+      <output wsam:Action="http://jwsorderprocessing/OrderProcessingService/getCustomerResponse" message="tns:getCustomerResponse" />
+    </operation>
+    <operation name="getProductDetail">
+      <input wsam:Action="http://jwsorderprocessing/OrderProcessingService/getProductDetailRequest" message="tns:getProductDetail" />
+      <output wsam:Action="http://jwsorderprocessing/OrderProcessingService/getProductDetailResponse" message="tns:getProductDetailResponse" />
+    </operation>
+    <operation name="getProductIds">
+      <input wsam:Action="http://jwsorderprocessing/OrderProcessingService/getProductIdsRequest" message="tns:getProductIds" />
+      <output wsam:Action="http://jwsorderprocessing/OrderProcessingService/getProductIdsResponse" message="tns:getProductIdsResponse" />
+    </operation>
+    <operation name="getCustomerOrders">
+      <input wsam:Action="http://jwsorderprocessing/OrderProcessingService/getCustomerOrdersRequest" message="tns:getCustomerOrders" />
+      <output wsam:Action="http://jwsorderprocessing/OrderProcessingService/getCustomerOrdersResponse" message="tns:getCustomerOrdersResponse" />
+    </operation>
+  </portType>
+  <binding name="OrderProcessingServicePortBinding" type="tns:OrderProcessingService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getOrderDetails">
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Purchase">
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCustomer">
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getProductDetail">
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getProductIds">
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCustomerOrders">
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="OrderProcessingService">
+    <port name="OrderProcessingServicePort" binding="tns:OrderProcessingServicePortBinding">
+      <soap12:address location="http://localhost:8080/jwsorderprocessing/OrderProcessingService" />
+    </port>
+  </service>
+</definitions>
